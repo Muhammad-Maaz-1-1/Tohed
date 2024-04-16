@@ -1,0 +1,340 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            h1 {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+}
+ul {
+    padding: 0;
+}
+body {
+    margin: 0;
+}
+figure {
+    margin-top: 0;
+}
+ul,
+li {
+    list-style-type: none;
+}
+address {
+    min-height: 40px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #1976d2;
+}
+.btn-class {
+    background: #1976d2;
+    color: #fff;
+    padding: 7px;
+    width: 100%;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+    max-width: 100px;
+    margin-bottom: 0;
+    border: 1px solid #1976d2;
+}
+.added {
+    color: #1976d2;
+    background-color: #fff;
+    max-width: 200px;
+    pointer-events: none;
+}
+.btn-remove {
+    pointer-events: initial;
+}
+.authors-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: calc(100% - 250px);
+    padding: 0;
+    margin-left: 30px;
+}
+
+.authors-list li {
+    border: 1px solid #f1f1f1;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 3%;
+    border: 1px solid #ccc;
+    margin: .5rem;
+    width: 20%;
+    min-width: 150px;
+    min-height: 200px;
+    text-align: center;
+}
+.authors-list figure {
+    min-height: 72px;
+}
+.authors-list img {
+    border-radius: 50%;
+}
+.authors-list li span,
+.authors-list li strong {
+    display: block;
+    margin-bottom: 20px;
+} 
+.authors-wrap {
+    display: flex; 
+    justify-content: space-between;
+    margin: 20px 30px;
+}
+.filters {
+    width: 220px;
+    padding: 40px 20px;
+    border-radius: 4px;
+    background: #f4f6f7;
+}
+.filters li {
+    margin-bottom: 20px;
+}
+.filters span {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
+}
+select {
+    width: 100%;
+    height: 32px;
+    background: #fff;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+fieldset {
+    padding: 0;
+    border: 0;
+}
+fieldset label {
+    margin-left: 10px;
+}
+button {
+    background: #1976d2;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 4px;
+    font-weight: 700;
+    border: 0;
+}
+.search-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 50px;
+}
+.search-wrap button {
+    max-width: 100px;
+}
+.search-wrap input {
+    font-size: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-right: 21px;
+    width: 300px;
+}
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>List of Authors</h1>
+            <div class="search-wrap">
+                <input type="search" placeholder="Enter email to search" / id="search-box">
+                <button type="submit" onclick="showResults()">Search</button>
+            </div>
+            <div class="authors-wrap">
+                <ul class="filters">
+                    <li>
+                        <span>Select Gender: </span>
+                        <select id="select">
+                            <option id="male" value="male">male</option>
+                            <option id="female" value="female">female</option>
+                            <option id="all" value="all">all</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span>What is Your Favorite country?</span>
+                        <fieldset>
+                            <div>
+                                <input type="checkbox" name="acs" value="Germany" id="ger"><label for="ger">Germany</label></input>  
+                            </div>   
+                            <div>
+                                <input type="checkbox" name="acs" value="Turkey" id="tur"><label for="tur">Turkey</label></input>
+                            </div>      
+                            <div>
+                                <input type="checkbox" name="acs" value="Australia" id="aus"><label for="aus">Australia</label></input>
+                            </div>
+                        </fieldset>  
+                    </li>
+                    <li>
+                        <button type="submit" onclick="filter()"> Apply Filters </button>
+                    </li>
+                </ul>
+                <ul id="authors" class="authors-list"></ul>
+            </div>
+        </section>
+      <script>
+        const ul = document.getElementById("authors");
+function createNode(element) {
+	return document.createElement(element);
+}
+function append(parent, el) {
+	return parent.appendChild(el);
+}
+window.onload = fetchData("https://randomuser.me/api/?results=10");
+var datum = [];
+
+function fetchData(url) {
+	var data = "";
+	fetch(url)
+		.then((resp) => resp.json())
+		.then(function (data) {
+			data = displayData(data.results);
+			return data;
+		})
+		.catch(function (error) {
+			return data;
+		});
+}
+
+function displayData(authors) {
+	return authors.map(function (author, index) {
+		datum.push(author);
+		let li = createNode("li"),
+			figure = createNode("figure");
+		(img = createNode("img")),
+			(strong = createNode("strong")),
+			(span = createNode("span"));
+		address = createNode("address");
+		a = createNode("a");
+		addBtn = createNode("a");
+		img.src = author.picture.medium;
+		strong.innerHTML = `${author.name.first} ${author.name.last}`;
+		span.innerHTML = `${author.dob.age} ${author.gender}`;
+		a.innerHTML = `${author.email}`;
+		a.setAttribute("href", `${author.email}`);
+		address.innerHTML = `${author.location.city}, ${author.location.state} , ${author.location.country}, ${author.location.postcode} `;
+		append(figure, img);
+		append(li, figure);
+		append(li, strong);
+		append(li, span);
+		append(li, a);
+		append(li, address);
+		append(li, addBtn);
+		append(ul, li);
+	});
+}
+
+function prepareList(author) {
+	var results = "";
+	results = `<li><figure><img src=${author.picture.medium} /></figure>\n
+                <strong>${author.name.first} ${author.name.last}</strong>\n
+                <span>${author.dob.age}</span>\n
+                <span>${author.gender}</span>\n
+                <a href= ${author.email}>${author.email}</a>\n
+                <address>${author.location.city}, ${author.location.state}, ${author.location.country}, ${author.location.postcode} </address>\n
+                \n
+                </li>`;
+	return results;
+}
+/*-----------filter----------*/
+function filter() {
+	const ul = document.getElementById("authors");
+	var a = document.getElementById("select");
+	var b = a.options[a.selectedIndex].value;
+	var items = document.getElementsByName("acs");
+	var selectedItems = [];
+	for (var i = 0; i < items.length; i++) {
+		if (items[i].type == "checkbox" && items[i].checked == true) {
+			selectedItems.push(items[i].value);
+		}
+	}
+	var showresults = prepareFilterData(datum, b, selectedItems);
+	console.log(showresults);
+	showresults ? counterResults(showresults) : null;
+}
+
+function counterResults(showresults) {
+	if (showresults["count"] > 0) {
+		ul.innerHTML = showresults["results"];
+	} else {
+		ul.innerHTML = "No results found";
+	}
+}
+
+function prepareFilterData(datum, b, selectedItems) {
+	var results = "";
+	var count = 0;
+	datum.map(function (author) {
+		if (b === author.gender) {
+			if (selectedItems.length == 0) {
+				count++;
+				results += prepareList(author);
+			} else {
+				for (var i = 0; i < selectedItems.length; i++) {
+					if (author.location.country === selectedItems[i]) {
+						count++;
+						console.log(author.location.country, author.name, i);
+						results += prepareList(author);
+					}
+				}
+			}
+		} else if (b === "all") {
+			console.log(b);
+			if (selectedItems.length == 0) {
+				count++;
+				results += prepareList(author);
+			}
+			for (var i = 0; i < selectedItems.length; i++) {
+				if (author.location.country === selectedItems[i]) {
+					count++;
+					results += prepareList(author);
+				}
+			}
+			console.log(results);
+		}
+	});
+
+	return { count: count, results: results };
+}
+
+/*-------searching-------*/
+function showResults() {
+	const ul = document.getElementById("authors");
+	var showresults = search(authors);
+	console.log(showresults);
+	showresults ? counterResults(showresults) : null;
+}
+
+function search() {
+	var results = "";
+	var count = 0;
+	var searchText = document.getElementById("search-box").value;
+	console.log(searchText, datum);
+	datum.map(function (author) {
+		var text = author.email;
+		var slicedText = text.slice(0, searchText.length);
+		if (searchText === slicedText) {
+			count++;
+			results += prepareList(author);
+		}
+	});
+	console.log(results, count);
+	return { count: count, results: results };
+}
+
+      </script>
+    </body>
+</html>

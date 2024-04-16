@@ -1,0 +1,532 @@
+/*  */
+
+/* header css */
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+#wpfront-scroll-top-container img {
+    width: 55px;
+    height: 55px;
+}
+#wpfront-scroll-top-container {
+    position: fixed;
+    cursor: pointer;
+    z-index: 9999;
+top: auto;
+bottom: 60px;
+left: auto;
+right: 20px;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+ul.sub-menu {
+    display: none;
+}
+
+header figure {
+    margin: 0;
+}
+
+nav#site-navigation {
+    background: linear-gradient(to bottom, #773909 0%,#8e5125 100%);
+    padding: 20px 0;
+    color: #e2bf5f;
+}
+
+nav#site-navigation ul {
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0px !important;
+    margin: 0px !important;
+    flex-wrap: wrap;
+}
+
+span.text-wrap {
+    font-size: 15px;
+    font-family: "Noto Nastaliq Urdu",Sans-serif !important;
+}
+
+header li a {
+    padding: 0 10px;
+}
+.sub-menu{
+       position: absolute;
+       visibility: hidden;
+       top: 42px;
+       left: 0;
+       z-index: 9999;
+}
+.main-section .container{padding-top: 40px !important;}
+header ul li:hover ul {
+   visibility: visible;
+      opacity:1;
+    display:block;
+}
+header .sub-menu .sub-menu{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+header .sub-menu li:hover .sub-menu{
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    left: 176px;
+}
+nav#site-navigation > ul {
+    letter-spacing: 3px;
+}
+ul.sub-menu li {
+    border-bottom: 1px solid #f1f1f1;
+    width: 100%;
+}
+header .sub-menu span.text-wrap {
+    position: relative;
+    font-size: 13px;
+    letter-spacing: .7px;
+}
+ul.sub-menu {
+    min-width: 178px;
+    background: #854B1D !important;
+    padding: 0;
+}
+header li > ul.sub-menu, header .sub-menu .sub-menu{
+    border-top: 3px solid #f7f4b7;
+
+}
+ul.sub-menu li a {
+    padding: 12px 15px;
+    display: block;
+}
+ul.sub-menu li {
+    line-height: 1.5 !important;
+}
+nav#site-navigation > ul li {
+    line-height: 3;
+}
+
+.gsc-control-cse {
+    background-color: #E2BF5F !important;
+    border: 1px solid transparent !important;
+    width: 81% !important;
+    margin: 29px auto !important;
+}
+.gsc-input-box {
+    border: 0px solid #dfe1e5 !important;
+    background: #8D5024 !important;
+    padding: 11px !important;
+}
+table th, table td {
+    padding: 10px !important;
+    text-align: left !important;
+    vertical-align: top !important;
+    border-bottom: 0px solid #e9e9e9 !important;
+}
+
+input.gsc-input {
+    height: 45.1px !important;
+    border-radius: 3px !important;
+}
+
+td.gsc-search-button button {
+    background: #673208 !important;
+    height: 88px !important;
+    border: none !important;
+    border-radius: 0px !important;
+    width: 75px !important;
+    border-radius: 2px !important;
+}
+
+td.gsc-search-button button svg {
+    width: 19px !important;
+    height: 19px !important;
+}
+header span.text-wrap svg {
+    width: 22px;
+    height: 15px;
+    font-weight: bold;
+}
+/* header css */
+
+
+body {
+    font-family: "Noto Nastaliq Urdu", serif;
+      background-image: url(https://k8y547.n3cdn1.secureserver.net/wp-content/uploads/2019/03/bac.png);
+    text-align: right;
+    
+    
+}
+/* .noto-nastaliq urdu-<uniquifier> {
+    font-family: "Noto Nastaliq Urdu", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+   */
+.slick-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    outline: none !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 200px !important;
+    background: #fff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.slick-arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+.prev-arrow.slick-arrow {
+    right: 80px !important;
+}
+a, li{list-style: none;text-decoration: none !important;color: inherit !important;}
+.container{
+    background-color: #f5deb3;
+    max-width: 1280px;
+    padding: 70px;
+}
+.entry-title{border-radius: 0px 0px 11px 11px;box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.79);
+    background: #673208;
+    padding: 23px;
+    text-align: center;
+    font-size: 65px;
+    color: #FFF3B5 !important;
+
+}
+.masjidFormSection .container {
+    padding-top: 0px;
+    border-radius: 11px;
+}
+/* Form wrapper */
+.masjidForm {
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #E2BF5F;
+    border-radius: 8px;
+}
+
+/* Form styles */
+.masjidForm form {
+    display: grid;
+    grid-gap: 15px;
+}
+
+.masjidForm label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    background-color: white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-input-wrapper input[type=file] {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+input[type="file"] {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+.masjidForm input[type="text"],
+.masjidForm input[type="file"],
+.masjidForm input[type="submit"] {
+    width: 100%;
+    padding:13.5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: right;
+    box-sizing: border-box;
+    font-weight: 600;
+    transition: border-color 0.3s ease;
+    color: #8D5024;
+}
+.masjidForm input[type="file"]{
+    margin-left: 20px;
+}
+.masjidForm input::placeholder{
+    color: #8D5024;
+    font-weight: bold;
+
+}
+.masjidForm input[type="text"]:focus,
+.masjidForm input[type="file"]:focus,
+.masjidForm input[type="submit"]:focus {
+    outline: none;
+    border-color: #E2BF5F;
+}
+header {
+    max-width: 1280px;
+    margin: auto;
+}
+footer {
+    max-width: 1280px;
+    margin: auto;
+    width: 100%;
+}
+
+footer img, header img{
+    width: 100%;
+}
+
+.masjidForm button[type="submit"] {
+    background-color: #8D5024
+    ;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 11%;
+    margin-left: auto;
+}
+
+.masjidForm button[type="submit"]:hover {
+    background-color: #8D5024;
+}
+.masjidListWrap span, .detailSectionWrap span {
+    display: block;
+    text-align: right;
+}
+.masjidListWrap figcaption, .detailSectionWrap {
+    background: #e2bf5f;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 12px;
+}
+
+.masjidListWrap figure {
+    background: #8d5024;
+    padding: 12px;
+    border-radius: 9px;
+}
+
+.masjidListWrap figure img {
+    width: 100%;
+    height: 216px;
+    border-radius: 9px;
+    object-fit: cover;
+}
+.filterWrap form {
+    display: flex;
+    justify-content: space-between;
+    background: #E2BF5F;
+    border-radius: 7px;
+    padding: 21px;
+    margin-bottom: 35px;
+}
+.filterWrap select, .filterWrap .btn{
+    width: 30%;
+    padding: 12px;
+    border-radius: 10px;
+    border: navajowhite;
+    background: #8d5024;
+    color: #fff;
+    text-align: right;
+    outline: none !important;
+    appearance: none;
+}
+.filterWrap .btn{text-align: center;font-weight: bold;color: #fff !important;}
+/* Responsive styles */
+
+.detailSlider img{
+width: 100%;
+height: 500px;
+border-radius: 11px;
+object-fit: cover;
+}
+
+html body .detailSectionWrap h2{
+    color: #000;
+    margin: 15px 0px 20px;
+    font-size: 50px;
+}
+html body .detailSectionWrap p{font-weight: 500;}
+.detailSection .containerWrap{
+    background-color: #8d5024;
+border-radius: 11px;
+padding: 30px;
+}
+.detailSection h2 {
+    text-align: right;
+    color: #ffff;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.detailSlider, .detailSlider * {
+    border-radius: 11px;
+}
+.detailSecWrap2{margin-top: 30px;}
+
+
+
+.detailSectionInnerWrap span {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.detailSectionInnerWrap2 {
+    margin-top: 81px;
+}
+html body .detailSectionInnerWrap2 h2{
+    margin-bottom: 50px;
+}
+.masjidListWrap figure span {
+    margin: 16px 0;
+}
+
+.masjidListWrap figure span strong {
+    margin-right: 10px;
+    font-size: 17px;
+}
+.detailSectionInnerWrap span strong{margin-right: 10px;font-size: 23px;}
+
+
+
+
+.offcanvasBtn{
+    width: 100%;
+  background: linear-gradient(to bottom, #773909 0%,#8e5125 100%) !important;
+  color: #fff3b5;
+  border: none;
+  font-size: 24px;
+  padding: 15px 0;
+}
+.offcanvasBtn svg{
+    width: 20px;
+    height: 40px;
+}
+.offcanvas {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 100%;
+    background: #773909;
+    z-index: 999;
+    top: 0;
+    transform: translateX(-334px);
+    transition: .5s;
+    opacity: 0;
+  }
+.offcanvas.active{
+    transform: translateX(-0px);
+    opacity: 1;
+    display: block;
+}
+.closeBtn svg {
+    width: 15px;
+    height: 19px;
+    margin-right: 5px;
+    color: #fff3b5;
+  }
+  .closeBtn {
+    color: #fff3b5;
+    padding: 13px;
+    text-align: start;
+    cursor: pointer;
+  }
+  .mobileResponsive{
+    display: none;
+  }
+@media (max-width: 958px) {
+    html body .gsc-control-cse{
+        width: 97% !important;
+    }
+    header{
+        display: none;
+    }
+    .mobileResponsive{
+        display: block;
+    }
+    .mobileResponsiveLogo {
+        background-image: url(https://k8y547.n3cdn1.secureserver.net/wp-content/uploads/2023/10/header-banner-1.gif) !important;
+        background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+      }
+      .mobileResponsiveLogo img{
+        opacity: 0;
+        visibility: hidden;
+      }
+}
+
+
+@media (max-width: 991px) {
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+      }
+      .masjidForm input[type="text"], .masjidForm input[type="file"], .masjidForm input[type="submit"]{
+        padding: 3.5px 10px;
+      }
+      .masjidForm label{
+        flex-direction: column;
+        gap: 15px;
+      }
+      .masjidForm label input{
+        width: 100%;
+      }
+      .masjidForm input#images{
+        font-size: 14px;
+      }
+      .masjidForm button[type="submit"]{width: 100px;}
+      .masjidForm input[type="file"]{margin: 0px;}
+      .entry-title{
+        font-size: 42px;
+      }
+    .masjidForm {
+        padding: 15px;
+    }
+    .filterWrap form{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .filterWrap button, .filterWrap select{
+        width: 100% !important;
+    }
+    .detailSection h2{
+        font-size: 45px;
+    }
+    .detailSlider img{height: 200px;}
+    .detailSectionInnerWrap span {
+        font-size: 14px;
+      }
+    .detailSectionInnerWrap span strong{
+        font-size: 16px;
+    }
+    html body .detailSectionWrap h2{
+        font-size: 30px;
+        
+    }
+    html body .detailSectionWrap p{
+        line-height: 2.5;
+        font-size: 14px;
+    }
+}
